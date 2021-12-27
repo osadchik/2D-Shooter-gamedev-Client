@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         verticalRotation = transform.localEulerAngles.x;
+        player = GetComponentInParent<PlayerManager>();
         horizontalRotation = player.transform.eulerAngles.y;
     }
 

@@ -1,5 +1,4 @@
-﻿using Assets.Scripts;
-using System.Net;
+﻿using System.Net;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
