@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System.Net;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
@@ -12,7 +13,8 @@ public class ClientHandle : MonoBehaviour
         Client.instance.myId = _myId;
         ClientSend.WelcomeReceived();
 
-        Client.instance.Udp.Connect(9900);
+        // Now that we have the client's id, connect UDP
+        Client.instance.Udp.Connect(((IPEndPoint)Client.instance.Tcp.socket.Client.LocalEndPoint).Port);
     }
 
     public static void SpawnPlayer(Packet _packet)
